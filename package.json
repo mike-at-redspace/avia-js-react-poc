@@ -3,6 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@cbsinteractive/avia-js": "^2.34.0",
+    "@cbsinteractive/avia-js-dashjs": "^2.33.0",
+    "@cbsinteractive/avia-js-fw": "^2.34.0",
+    "@cbsinteractive/avia-js-gam": "^2.34.0",
+    "@cbsinteractive/avia-js-react": "^2.33.0",
+    "@cbsinteractive/avia-js-react-ui": "^2.34.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
