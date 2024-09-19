@@ -1,7 +1,7 @@
 import { Avia } from "@cbsinteractive/avia-js-react";
 import { useState, useRef } from "react";
 
-const usePlausePlayerWhenOutOfView = (playerRef) => {
+const usePauseWhenOutOfView = (playerRef) => {
   if (!playerRef.current) {
     return;
   }
@@ -33,7 +33,7 @@ function App() {
     },
   });
 
-  usePlausePlayerWhenOutOfView(playerRef);
+  usePauseWhenOutOfView(playerRef);
 
   return (
     <div className="video-background" ref={playerRef}>
