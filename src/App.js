@@ -1,25 +1,6 @@
 import { Avia } from "@cbsinteractive/avia-js-react";
 import { useState, useRef } from "react";
-
-const usePauseWhenOutOfView = (playerRef) => {
-  if (!playerRef.current) {
-    return;
-  }
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          window.player.play();
-        } else {
-          window.player.play();
-        }
-      });
-    },
-    { threshold: 0.5 }
-  );
-
-  observer.observe(playerRef.current);
-};
+import { usePauseWhenOutOfView } from "./hooks";
 
 function App() {
   const playerRef = useRef(null);
@@ -47,7 +28,7 @@ function App() {
         gam={false}
         debug
         hls
-      ></Avia>
+      />
     </div>
   );
 }
