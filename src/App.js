@@ -42,11 +42,11 @@ function App() {
         resource={resource}
         onError={(error) => console.log(error)}
         controls={false}
-        debug
         dash={false}
-        hls={true}
         fw={false}
         gam={false}
+        debug
+        hls
       ></Avia>
     </div>
   );
