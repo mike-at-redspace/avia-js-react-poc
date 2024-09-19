@@ -1,6 +1,26 @@
 import { Avia } from "@cbsinteractive/avia-js-react";
 import { useState, useRef } from "react";
 
+const usePlausePlayerWhenOutOfView = (playerRef) => {
+  if (!playerRef.current) {
+    return;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          window.player.play();
+        } else {
+          window.player.play();
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  observer.observe(playerRef.current);
+};
+
 function App() {
   const playerRef = useRef(null);
   const [options] = useState({
@@ -9,10 +29,11 @@ function App() {
 
   const [resource] = useState({
     location: {
-      mediaUrl:
-        "https://media.amlg.io/assets/splice_preview/2024/08/27/2344955459581/V-24-1590-06_QPDO_Trailer_1_FL_1920_x_1080_080524_FINAL_2780226_2780226_3133.mp4",
+      mediaUrl: "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8",
     },
   });
+
+  usePlausePlayerWhenOutOfView(playerRef);
 
   return (
     <div className="video-background" ref={playerRef}>
